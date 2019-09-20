@@ -44,7 +44,10 @@ namespace client {
     /// @a wildcard_pattern.
     SharedPtr<BlueprintLibrary> Filter(const std::string &wildcard_pattern) const;
 
-    const_pointer Find(const std::string &key) const;
+    // Ree change:20.09.2019 @RH ---->
+    // removed const to be able to change attributes on the sensor 
+    value_type * Find(const std::string &key); 
+    // <---- Ree change:20.09.2019
 
     /// @throw std::out_of_range if no such element exists.
     const_reference at(const std::string &key) const;

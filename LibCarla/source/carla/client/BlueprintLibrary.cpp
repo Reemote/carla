@@ -33,10 +33,12 @@ namespace client {
     return SharedPtr<BlueprintLibrary>{new BlueprintLibrary(result)};
   }
 
-  BlueprintLibrary::const_pointer BlueprintLibrary::Find(const std::string &key) const {
+  // Ree change:20.09.2019 @RH ---->
+  BlueprintLibrary::value_type * BlueprintLibrary::Find(const std::string &key) {
     auto it = _blueprints.find(key);
     return it != _blueprints.end() ? &it->second : nullptr;
   }
+  // <---- Ree change:20.09.2019
 
   BlueprintLibrary::const_reference BlueprintLibrary::at(const std::string &key) const {
     auto it = _blueprints.find(key);
