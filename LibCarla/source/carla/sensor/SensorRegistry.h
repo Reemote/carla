@@ -31,6 +31,9 @@ class ARayCastLidar;
 class ASceneCaptureCamera;
 class ASemanticSegmentationCamera;
 class FWorldObserver;
+class ACameraSensor_Compressed; // Ree change:2.10.2019 @RH
+
+
 
 namespace carla {
 namespace sensor {
@@ -51,7 +54,9 @@ namespace sensor {
     std::pair<ACollisionSensor *, s11n::CollisionEventSerializer>,
     std::pair<AGnssSensor *, s11n::NoopSerializer>,
     std::pair<ALaneInvasionSensor *, s11n::NoopSerializer>,
-    std::pair<AObstacleDetectionSensor *, s11n::ObstacleDetectionEventSerializer>
+    std::pair<AObstacleDetectionSensor *, s11n::ObstacleDetectionEventSerializer>,
+    std::pair<ACameraSensor_Compressed *, s11n::ImageSerializer> // Ree change:20.09.2019 @RH ---->
+
   >;
 
 } // namespace sensor
@@ -71,5 +76,6 @@ namespace sensor {
 #include "Carla/Sensor/GnssSensor.h"
 #include "Carla/Sensor/LaneInvasionSensor.h"
 #include "Carla/Sensor/ObstacleDetectionSensor.h"
+#include "Carla/Sensor/CameraSensor_Compressed.h" // Ree change:20.09.2019 @RH 
 
 #endif // LIBCARLA_SENSOR_REGISTRY_WITH_SENSOR_INCLUDES
