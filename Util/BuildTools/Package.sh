@@ -14,7 +14,7 @@ PACKAGES="Carla"
 DO_TARBALL=true
 DO_CLEAN_INTERMEDIATE=false
 PROPS_MAP_NAME=PropsMap
-PACKAGE_CONFIG=Shipping
+PACKAGE_CONFIG=Development #Shipping
 
 OPTS=`getopt -o h --long help,config:,no-zip,clean-intermediate,packages: -n 'parse-options' -- "$@"`
 
